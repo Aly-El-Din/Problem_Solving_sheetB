@@ -32,7 +32,7 @@ ll d(ll n) {
 	}
 	for (int i = 1; i * i <= n; i++) {
 		if (n % i == 0) {
-			if (n / i == i) {
+			if (n / i == i) {	//i*i==n 
 				count++;
 			}
 			else {
