@@ -32,22 +32,30 @@ int main() {
 	int a,x,y;
 	cin >> a >> x >> y;
 	int mod = y % a;
+	//If y is divisible by a-->stone is at a border of square
 	if (mod == 0) {
 		cout << -1;
 		return 0;
 	}
+	//get border of the square to get its level
 	int yy = y - mod;
+	//get index of the box (0 based)
 	int idx = yy / a;
+	//if the idx is even--> two included boxes else one box only
 	if (idx != 0 && idx % 2 == 0) {
 		if ((x == 0|| x == a || x==-a)) {
+			//On border
 			cout << -1;
 			return 0;
 		}
 		else if (x > a || x < -a) {
+			//Out of borders
 			cout << -1;
 			return 0;
 		}
 		else {
+			//equation to get the number of the box
+			//4,3,19-->idx=4
 			int cont = idx + idx / 2;
 			if (x > 0 && x < a) {
 				cout << cont + 1;
